@@ -25,6 +25,7 @@ GEM
     pry-byebug (3.7.0)
       byebug (~> 11.0)
       pry (~> 0.10)
+    sqlite3 (1.4.1)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -37,6 +38,7 @@ DEPENDENCIES
   activerecord (~> 6.0)
   activesupport (~> 6.0)
   pry-byebug
+  sqlite3
 
 BUNDLED WITH
    2.0.2
