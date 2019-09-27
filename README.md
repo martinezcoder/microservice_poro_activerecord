@@ -16,14 +16,14 @@ docker-compose build
 docker-compose run web rake -T
 ```
 
-### How to add a new migration
+### How to add a new migration
 
 Just create a migration file in 'db/migrate' folder, using numerical order at the beginning of the file. E.g., take a look a the already existent file `001_create_table_pets.rb`
 
-### Run migrations
+### Run migrations
 
 ```sh
-docker-compose run web rake db:create db:migrate
+docker-compose run web rake db:create db:migrate db:seed
 ```
 
 ###
