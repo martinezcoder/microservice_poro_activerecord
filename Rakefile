@@ -1,13 +1,15 @@
-require File.expand_path('../lib/app', __FILE__)
+require File.expand_path('../config/boot', __FILE__)
 
 # Rails tasks for ActiveRecord
 include ActiveRecord::Tasks
 
+config = Config.instance
+
 DatabaseTasks.root = __dir__
-DatabaseTasks.env = App.config.env
-DatabaseTasks.db_dir = App.config.db_dir
-DatabaseTasks.migrations_paths = App.config.migrations_path
-DatabaseTasks.database_configuration = App.config.database_configuration
+DatabaseTasks.env = config.env
+DatabaseTasks.db_dir = config.db_dir
+DatabaseTasks.migrations_paths = config.migrations_path
+DatabaseTasks.database_configuration = config.database_configuration
 
 task :environment do
   ActiveRecord::Base.establish_connection(
