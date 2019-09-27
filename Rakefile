@@ -1,20 +1,13 @@
-require_relative 'config/environment'
-require 'erb'
+require File.expand_path('../lib/app', __FILE__)
 
 # Rails tasks for ActiveRecord
 include ActiveRecord::Tasks
 
-def load_yaml(filename)
-  file = File.read(filename)
-  compiled_file = ERB.new(file).result
-  YAML.load(compiled_file)
-end
-
 DatabaseTasks.root = __dir__
-DatabaseTasks.env = "development"
-DatabaseTasks.db_dir = File.expand_path('db/', __dir__)
-DatabaseTasks.migrations_paths = File.expand_path('db/migrate', __dir__)
-DatabaseTasks.database_configuration = load_yaml('config/database.yml')
+DatabaseTasks.env = App.config.env
+DatabaseTasks.db_dir = App.config.db_dir
+DatabaseTasks.migrations_paths = App.config.migrations_path
+DatabaseTasks.database_configuration = App.config.database_configuration
 
 task :environment do
   ActiveRecord::Base.establish_connection(

@@ -1,5 +1,3 @@
-module App
-  class Pet < ::ActiveRecord::Base
-  end
+class Pet < ::ActiveRecord::Base
 end
 
