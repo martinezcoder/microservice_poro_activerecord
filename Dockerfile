@@ -10,3 +10,4 @@ WORKDIR /app
 ADD ./ ./
 
 RUN bundle
+

@@ -1,8 +1,8 @@
-## Use ActiveRecord in plain ruby code
+## Plain ruby code application
 
-We usually have to create plain ruby code needing a database dependency. This code is an starting point for this.
+We usually have to create plain ruby code or microservices using a database dependency. This code is an starting point for this. The magic in this repo consists in including the power of Rake tasks and ActiveRecord library.
 
-It uses the power of Rails tasks and ActiveRecord library, using just what it is really needed.
+E.g., whether you need to create an API, you can start with the code in `bin/serve` where you will find a sinatra web endpoint responding the content of a database table.
 
 ### Instalation
 
@@ -25,5 +25,3 @@ Just create a migration file in 'db/migrate' folder, using numerical order at th
 ```sh
 docker-compose run web rake db:create db:migrate db:seed
 ```
-
-###
