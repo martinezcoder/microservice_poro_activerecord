@@ -8,6 +8,8 @@ E.g., whether you need to create an API, you can start with the code in `bin/ser
 
 ```sh
 docker-compose build
+docker-compose run app rake db:create db:migrate
+docker-compose run app rake db:seed
 ```
 
 ### Take a look at the available rake tasks
