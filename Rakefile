@@ -25,9 +25,6 @@ end
 DatabaseTasks.seed_loader = Seeder.new(File.join(__dir__, 'db/seeds.rb'))
 
 task :environment do
-  ActiveRecord::Base.establish_connection(
-    DatabaseTasks.database_configuration.fetch(DatabaseTasks.env)
-  )
 end
 
 load 'active_record/railties/databases.rake'
